@@ -3,6 +3,7 @@ on:
   push:
   workflow_dispatch:
 
+# This branch is not main - String will not be printed.
 jobs:
   check-main-branch:
     if: github.ref_name == 'main'
