@@ -1,0 +1,11 @@
+name: check-beta-tag
+on: 
+  release: 
+    types: [published]
+
+jobs:
+  beta-deployment:
+    if: contains(github.ref_name, '-beta')
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This is the beta tag of $GITHUB_REF_NAME"

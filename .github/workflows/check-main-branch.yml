@@ -1,0 +1,11 @@
+name: check-main-branch
+on: 
+  push:
+  workflow_dispatch:
+
+jobs:
+  check-main-branch:
+    if: github.ref_name == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This is the main branch."
